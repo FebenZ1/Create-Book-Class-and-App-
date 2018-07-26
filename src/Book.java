@@ -5,6 +5,9 @@ public class Book {
     private double price;
     private String isInStock;
 
+
+
+
     public Book() {
 
     }
@@ -74,5 +77,14 @@ public class Book {
         return ("The author of the book: " + author+ "\n" +
                 "The title of the book: " + bookTitle + "\n"
                 + "The description of the book: " + description);
+    }
+
+    public String calculatePrice(int quantityRequested){// this method first checks if it is in stalk, return product of price and quantity requested
+        if (isInStock.equalsIgnoreCase("yes")){
+            double totalPriceIs = (price *quantityRequested);
+            return ("The price of the book(s) is: " + totalPriceIs);
+        }
+        else
+        return ("Sorry, the book is not in stock.");
     }
 }
